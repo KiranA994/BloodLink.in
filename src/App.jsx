@@ -10,8 +10,7 @@ function App() {
 
   return (
     <>
-      <Hospital/>
-      <Home/>
+      {/* <Home/> */}
       {/* <Hospital/> */}
       <Form/>
     </>
