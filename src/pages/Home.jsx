@@ -40,23 +40,23 @@ function Home() {
                 <div className='col-lg-3 col-md-6 mt-5'>
                     <Card style={{ width: '20rem' }}>
                         <Card.Body className='rounded' style={{ backgroundColor: '#FFFFFF' }}  >
-                            <Card.Title>
-                                <div className='d-flex justify-content-between'>
-                                    <h5 style={{ color: 'black' }}>Rangan</h5>
-                                    <img src={User} alt="" />
+                            <Card.Title >
+                                <div className='d-flex justify-content-between ' style={{ backgroundColor: "white" }}>
+                                    <h3 style={{ color: 'black', background: "white",fontWeight:"700" }}>Rangan</h3>
+                                    <img src={User} alt="" style={{ backgroundColor: "white" }} />
                                 </div>
                             </Card.Title>
                             {/* <Card.Subtitle className="mb-2 fs-5">Blood Group : o+</Card.Subtitle> */}
-                            <Card.Text>
-                                <h6 style={{ color: 'black' }}><b>Blood Group : o+</b></h6>
+                            <Card.Text style={{ backgroundColor: "white" }}>
+                                <h6 style={{ color: 'black', background: "white",fontWeight:"600" }}>Blood Group : o+</h6>
 
-                                <h6 style={{ color: 'black' }}><b>Location : </b></h6>
-                                <h6 style={{ color: 'black' }}><b>Contact :+ 123 456 789</b></h6>
+                                <h6 style={{ color: 'black', background: "white",fontWeight:"600" }}>Location : </h6>
+                                <h6 style={{ color: 'black',background:"white",fontWeight:"600" }}>Contact :+ 123 456 789</h6>
                             </Card.Text>
 
-                            <div className='ms-auto d-flex justify-content-between'>
+                            <div className='ms-auto d-flex justify-content-between' style={{backgroundColor:"white"}}>
                                 <Card.Link href="#"></Card.Link>
-                                <h6 className='text-danger'>#o+ #city #state</h6></div>
+                                <h6 className='text-danger'style={{backgroundColor:"white"}}>#o+ #city #state</h6></div>
                         </Card.Body>
                     </Card>
 
