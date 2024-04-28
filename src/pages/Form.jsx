@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from "framer-motion";
 import Logo from '../assets/BloodLink-Logo.svg'
 import { Col, Row } from 'react-bootstrap';
 
 
 const Form = () => {
+  const [userDetails,setUserDetails] = useState({
+    name:"",
+    age:"",
+    email:"",
+    bloodGroup:"",
+    location:"",
+    num:""
+  })
+  console.log(userDetails);
   return (
     <motion.div className='p-5' initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -30,13 +39,13 @@ const Form = () => {
         ease: [0, 0.71, 0.2, 1.01]
       }}>
          <h4 className='mb-3'>Full Name :</h4>
-          <input type="text" className='form-control mb-3' />
+          <input type="text" className='form-control mb-3' onChange={((e)=> setUserDetails({...userDetails,name:e.target.value}))} />
           <h4>Age:</h4>
-          <input type="text" className='form-control mb-3' />
+          <input type="text" className='form-control mb-3' onChange={((e)=>setUserDetails({...userDetails,age:e.target.value}))}/>
           <h4>Email :</h4>
-          <input type="text" className='form-control mb-3' />
+          <input type="text" className='form-control mb-3' onChange={((e)=>setUserDetails({...userDetails,email:e.target.value}))}/>
           <p className='fs-4'>Please Select your Group</p>
-          <select class="form-select mb-3" aria-label="Default select example">
+          <select class="form-select mb-3" aria-label="Default select example" onChange={((e)=>setUserDetails({...userDetails,bloodGroup:e.target.value}))}>
             <option selected></option>
             <option value="A">A+</option>
             <option value="A">A-</option>
@@ -46,9 +55,9 @@ const Form = () => {
             <option value="O">O-</option>
           </select>
           <h4>Location/State :</h4>
-          <input type="text" className='form-control mb-3' />
+          <input type="text" className='form-control mb-3' onChange={((e)=>setUserDetails({...userDetails,location:e.target.value}))}/>
           <h4>Contact Num :</h4>
-          <input type="text" className='form-control mb-3' />
+          <input type="text" className='form-control mb-3' onChange={((e)=>setUserDetails({...userDetails,num:e.target.value}))} />
           <div className='d-flex justify-content-center mt-5'>
             <button className='px-3 py-2' style={{backgroundColor:"#D22F27",borderRadius:"15px",border:"none"}}>Submit</button>
           </div>
