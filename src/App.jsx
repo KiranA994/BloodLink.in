@@ -18,8 +18,8 @@ function App() {
       {/* <Hospital/> */}
       
       <Routes>
-        <Route path='/home' element={<Home/>} />
-        <Route path='/' element={<Hospital/>} />
+        <Route path='/' element={<Home/>} />
+        <Route path='/hospital' element={<Hospital/>} />
         <Route path='/form' element={<Form/>} />
 
       </Routes>

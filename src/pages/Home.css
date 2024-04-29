@@ -1,0 +1,17 @@
+.hospital{
+    color: white;
+    border: none;
+    border-radius: 12px;
+}
+.hospital:hover{
+    background-color: #D9D9D9;
+    color: black;
+}
+@media only screen and (max-width: 600px){
+    .hospital{
+        display: none;
+    }
+    .search{
+        
+    }
+}

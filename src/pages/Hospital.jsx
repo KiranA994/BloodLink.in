@@ -6,16 +6,20 @@ import { motion } from "framer-motion";
 
 const Hospital = () => {
     return (
-        <motion.div className='p-5'   initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.8,
-          delay: 0.5,
-          ease: [0, 0.71, 0.2, 1.01]
-        }}>
+        <motion.div className='p-5' initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+            }}>
             <div className='d-flex justify-content-start align-items-center'>
-                <img src={Logo} alt="BloodLink_Logo" className='me-2' />
-                <h2 className='mt-3'>BloodLink.in</h2>
+                <a href="/" className='text-decoration-none'>
+                    <div className='d-flex'>
+                        <img src={Logo} alt="BloodLink_Logo" className='me-2' width={40} />
+                        <h5 className='mt-3'>BloodLink.in</h5>
+                    </div>
+                </a>
             </div>
             <br />
             <p className='ms-5 mb-4'> BloodLink enables immediate connections between blood donors and recipients. With just a few clicks, those in need can find donors who match their blood type and location, facilitating quick and efficient blood donations.</p>
@@ -27,8 +31,8 @@ const Hospital = () => {
                     ease: [0, 0.71, 0.2, 1.01]
                 }}>
 
-                <Row className='p-4 bg-light rounded-3' xs={1} md={4}  >
-                    <Col className='bg-light'>
+                <Row className='p-4 bg-white rounded-3' xs={1} md={4}  >
+                    <Col className='bg-white'>
                         <h1 className='text-center mb-4 ' style={{ backgroundColor: "transparent", color: "#D22F27", fontWeight: "700", borderBottom: "1px black solid" }}>A</h1>
                         <Card style={{ width: '100%' }} className='mb-2'>
                             <Card.Body className='p-4 rounded-3'>
@@ -70,7 +74,7 @@ const Hospital = () => {
                         </Card>
                     </Col>
 
-                    <Col className='bg-light'>
+                    <Col className='bg-white'>
                         <h1 className='text-center mb-4 ' style={{ backgroundColor: "transparent", color: "#D22F27", fontWeight: "700", borderBottom: "1px black solid" }}>B</h1>
                         <Card style={{ width: '100%' }} className='mb-2'>
                             <Card.Body className='p-4 rounded-3'>
@@ -112,7 +116,7 @@ const Hospital = () => {
                         </Card>
                     </Col>
 
-                    <Col className='bg-light'>
+                    <Col className='bg-white'>
                         <h1 className='text-center mb-4 ' style={{ backgroundColor: "transparent", color: "#D22F27", fontWeight: "700", borderBottom: "1px black solid" }}>AB</h1>
                         <Card style={{ width: '100%' }} className='mb-2'>
                             <Card.Body className='p-4 rounded-3'>
@@ -154,7 +158,7 @@ const Hospital = () => {
                         </Card>
                     </Col>
 
-                    <Col className='bg-light'>
+                    <Col className='bg-white'>
                         <h1 className='text-center mb-4 ' style={{ backgroundColor: "transparent", color: "#D22F27", fontWeight: "700", borderBottom: "1px black solid" }}>O</h1>
                         <Card style={{ width: '100%' }} className='mb-2'>
                             <Card.Body className='p-4 rounded-3'>
