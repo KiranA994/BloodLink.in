@@ -5,7 +5,7 @@ import { serverUrl } from './baseUrl'
 //  api for registering user
 
 export const registerUserApi = async (reqBody) => {
-    return await commonAPI('POST', `${serverUrl}/register`, reqBody)
+    return await commonAPI('POST', `${serverUrl}/bloodData`, reqBody)
 }
 
 // api for login
