@@ -3,14 +3,22 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import '../pages/Home.css'
-import Signup from './Signup';
-import { Link } from 'react-router-dom';
+
 
 const Signin = () => {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    // input check 
+    const [signIn,setSignIn] = useState({
+        username:"",
+        password:""
+    })
+    console.log(signIn);
+
+    
   return (
     
     <>
@@ -18,9 +26,9 @@ const Signin = () => {
     <Modal show={show} onHide={handleClose} >
     <Modal.Body>
         <h3>Sign in</h3>
-        <input type="text" className='form-control mb-3' placeholder='User name'/>
+        <input type="text" className='form-control mb-3' placeholder='User name' onChange={((e)=> setSignIn({...signIn,username:e.target.value}))}/>
        
-        <input type="text" className='form-control mb-3' placeholder='Password'/>
+        <input type="text" className='form-control mb-3' placeholder='Password' onChange={((e)=>setSignIn({...signIn,password:e.target.value}))}/>
         
     </Modal.Body>
     <Modal.Footer className='bg-transparent d-flex justify-content-evenly'>

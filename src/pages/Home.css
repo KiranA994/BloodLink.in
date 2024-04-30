@@ -20,14 +20,22 @@
     color: white;
     background: rgba(255, 0, 0, 0.664);
 }
+.loginHide{
+    display: flex;
+}
+.underLogin{
+    display: none;
+}
 @media only screen and (max-width: 600px){
-    .hospital{
-        display: none;
-    }
+    
     .logo{
         visibility: visible;
     }
-    .signIn,.signup{
+    .loginHide{
         display: none;
+    }
+    .underLogin{
+        display: flex;
+        margin-top: 10px;
     }
 }
