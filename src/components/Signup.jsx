@@ -23,7 +23,6 @@ const Signup = () => {
   console.log(signUp);
 
   // navigate next page with a delay 
-  // const [nextPagePath, setNextPagePath] = useState(false)
   const navigate = useNavigate('')
 
   const handleSubmit = async () => {

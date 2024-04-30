@@ -4,9 +4,14 @@ import Logo from '../assets/BloodLink-Logo.svg'
 import { Col, Row } from 'react-bootstrap';
 import { registerUserApi } from '../services/allAPI';
 import { Toaster, toast } from 'sonner'
+import { useNavigate } from 'react-router-dom';
 
 
 const Form = () => {
+  //navigate to home
+  const navigate = useNavigate('')
+
+
   const [userDetails, setUserDetails] = useState({
     name: "",
     age: "",
@@ -25,6 +30,10 @@ const Form = () => {
       const res = await registerUserApi(userDetails)
       if (res.status >= 200 && res.status < 300) {
         toast.success('Created Succefully')
+
+        setTimeout(()=>{
+          navigate('/')
+        },3000)
       }
     }
   }
@@ -84,7 +93,7 @@ const Form = () => {
         <Col></Col>
       </Row>
       <Toaster position="top-center" toastOptions={{
-        style: { background: 'black', fontSize: "1rem" },
+        style: { background: 'white', fontSize: "1rem" },
       }} />
     </motion.div>
   )

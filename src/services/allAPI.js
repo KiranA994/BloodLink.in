@@ -17,7 +17,7 @@ export const loginUserApi = async (reqBody) => {
 // api to get all data
 
 export const getAllUserApi = async() => {
-    return await commonAPI('GET', `${serverUrl}/bloodInfo`,'')
+    return await commonAPI('GET', `${serverUrl}/bloodData`,'')
 }
 
 // api to delete a post of a particular user
