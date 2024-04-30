@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { motion } from "framer-motion";
 import Logo from '../assets/BloodLink-Logo.svg'
 import User from '../assets/user-icon.svg'
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Container, Navbar, Row } from 'react-bootstrap';
 import './Home.css'
 import Signin from '../components/Signin';
 import Signup from '../components/Signup';
