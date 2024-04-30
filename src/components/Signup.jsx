@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import '../pages/Home.css'
-import { loginUserApi } from '../services/allAPI';
+import { createUserApi } from '../services/allAPI';
 import { Toaster, toast } from 'sonner';
 import { useNavigate } from 'react-router-dom';
 
@@ -33,7 +33,7 @@ const Signup = () => {
       toast.error('Please fill the details')
     }
     else {
-      const response = await loginUserApi(signUp)
+      const response = await createUserApi(signUp)
       if (response.status >= 200 && response.status < 300) {
         toast.success('Account created Successfully')
         handleClose()
@@ -68,7 +68,7 @@ const Signup = () => {
         </Modal.Footer>
 
       </Modal>
-      <Toaster position="top-center" toastOptions={{
+      <Toaster position="top-right" toastOptions={{
         style: { background: 'white', fontSize: "1rem" },
       }} />
     </>

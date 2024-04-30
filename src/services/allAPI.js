@@ -8,20 +8,20 @@ export const registerUserApi = async (reqBody) => {
     return await commonAPI('POST', `${serverUrl}/bloodData`, reqBody)
 }
 
-// api for login
+// api to create a new user
 
-export const loginUserApi = async (reqBody) => {
-    return await commonAPI('POST', `${serverUrl}/login`, reqBody)
-}
+export const createUserApi = async (reqBody) => {
+    return await commonAPI('POST', `${serverUrl}/create`, reqBody)
+} 
+
+// api to get all user
+
+export const getUserApi = async () => {
+    return await commonAPI('GET', `${serverUrl}/create`, '')
+} 
 
 // api to get all data
 
 export const getAllUserApi = async() => {
     return await commonAPI('GET', `${serverUrl}/bloodData`,'')
-}
-
-// api to delete a post of a particular user
-
-export const deleteUserApi = async (id) => {
-    return await commonAPI('DELETE', `${serverUrl}/deleteUser/${id}`, {})
 }

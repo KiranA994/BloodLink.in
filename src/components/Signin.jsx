@@ -3,6 +3,9 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import '../pages/Home.css'
+import { getUserApi } from '../services/allAPI';
+import { useNavigate } from 'react-router-dom';
+import { Toaster, toast } from 'sonner';
 
 
 const Signin = () => {
@@ -11,6 +14,8 @@ const Signin = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const[userData,setUserData] = useState([])
+
     // input check 
     const [signIn,setSignIn] = useState({
         username:"",
@@ -18,7 +23,26 @@ const Signin = () => {
     })
     console.log(signIn);
 
-    
+      // navigate next page with a delay 
+     const navigate = useNavigate('')
+
+    const handleUser = async() => {
+      const response = await getUserApi()
+      setUserData(response.data)
+      const existingUser = userData.find(item=> item.username == signIn.username)
+      const existingPswd = userData.find(item=> item.password == signIn.password)
+      if(existingUser && existingPswd){
+        toast.success('User LoggedIn successfully')
+        handleClose()
+        setTimeout(() => {
+          navigate('/hospital')
+        }, 3000)
+      }
+      else{
+        toast.error('Invalid username / password')
+      }
+    } 
+
   return (
     
     <>
@@ -35,12 +59,15 @@ const Signin = () => {
       <Button variant="secondary" onClick={handleClose}>
         Close
       </Button>
-      <Button variant="primary" className='bg-danger' style={{border:"none"}} onClick={handleClose}>
+      <Button variant="primary" className='bg-danger' style={{border:"none"}} onClick={handleUser}>
         Login
       </Button>
     </Modal.Footer>
     
   </Modal>
+  <Toaster position="top-right" toastOptions={{
+        style: { background: 'white', fontSize: "1rem" },
+      }} />
     </>
   )
 }

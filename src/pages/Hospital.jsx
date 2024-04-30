@@ -3,6 +3,7 @@ import Logo from '../assets/BloodLink-Logo.svg'
 import { Card, Col, Row } from 'react-bootstrap'
 import User from '../assets/user-icon.svg'
 import { motion } from "framer-motion";
+import Enquire from '../components/Enquire';
 
 const Hospital = () => {
     return (
@@ -16,8 +17,13 @@ const Hospital = () => {
             <div className='d-flex justify-content-start align-items-center'>
                 <a href="/" className='text-decoration-none'>
                     <div className='d-flex'>
-                        <img src={Logo} alt="BloodLink_Logo" className='me-2' width={40} />
-                        <h5 className='mt-3'>BloodLink.in</h5>
+                        <div>
+                            <img src={Logo} alt="BloodLink_Logo" className='me-2' width={40} />
+                            <h5 className='mt-3'>BloodLink.in</h5>
+                        </div>
+                        <div>
+                            <Enquire />
+                        </div>
                     </div>
                 </a>
             </div>
