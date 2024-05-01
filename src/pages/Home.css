@@ -37,6 +37,8 @@
     .loginHide{
         display: none;
     }
+
+    
     .underLogin{
         display: flex;
         margin-top: 10px;

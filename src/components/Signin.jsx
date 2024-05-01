@@ -26,22 +26,37 @@ const Signin = () => {
       // navigate next page with a delay 
      const navigate = useNavigate('')
 
-    const handleUser = async() => {
-      const response = await getUserApi()
-      setUserData(response.data)
-      const existingUser = userData.find(item=> item.username == signIn.username)
-      const existingPswd = userData.find(item=> item.password == signIn.password)
-      if(existingUser && existingPswd){
-        toast.success('User LoggedIn successfully')
-        handleClose()
-        setTimeout(() => {
-          navigate('/hospital')
-        }, 3000)
+
+    const handleUser = async () => {
+      try {
+        const response = await getUserApi();
+        console.log("Fetched User Data:", response.data);
+        setUserData(response.data);
+    
+        const existingUser = response.data.find(item => item.username === signIn.username);
+    
+        if (existingUser) {
+          const existingPswd = existingUser.password;
+    
+          if (existingPswd === signIn.password) {
+            toast.success('User Logged In successfully');
+            handleClose();
+    
+            setTimeout(() => {
+              localStorage.setItem('user', existingUser.username);
+              navigate('/hospital');
+            }, 3000);
+          } else {
+            toast.error('Invalid password');
+          }
+        } else {
+          toast.error('Invalid username');
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        toast.error('Error occurred while signing in');
       }
-      else{
-        toast.error('Invalid username / password')
-      }
-    } 
+    };
 
   return (
     
