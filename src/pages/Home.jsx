@@ -7,17 +7,15 @@ import './Home.css'
 import Signin from '../components/Signin';
 import Signup from '../components/Signup';
 import { getAllUserApi } from '../services/allAPI';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-
+import Hero from '../components/Hero';
+import Footer from '../components/Footer';
 
 const Home = () => {
     // store card to show details 
     const [card, setCard] = useState([])
-    
-    const currentUser = localStorage.getItem('user')
 
-    console.log(currentUser);
+    const [searchTerm,setSearchTerm] = useState('');
+    
 
     // get userdetails for card append 
     const getDetails = async () => {
@@ -26,14 +24,19 @@ const Home = () => {
         setCard(response.data)
     }
 
+    // search functionality 
+    const handleSearch = (e)=>{
+        setSearchTerm(e.target.value)
+    }
+
+    const filteredCards = card.filter(
+        (item)=>
+            item.location.toLowerCase().includes(searchTerm.toLowerCase()) || item.bloodGroup.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+
     useEffect(() => {
         getDetails()
     }, [])
-
-    const clearName = () => {
-        localStorage.removeItem('user')
-        getDetails()
-    }
 
     return (
         <>
@@ -51,34 +54,13 @@ const Home = () => {
                             <h5 className='mt-3'>BloodLink.in</h5>
                         </div>
                     </a>
-
-                    {currentUser== null && 
                     <div className='loginHide'>
-
-        
                         <h6 className='hospital px-3 py-1' style={{ textDecoration: "none", transition: "0.3s" }}><Signin /></h6>
-         
+
                         <h6 className='signup px-3 py-1 ms-2' style={{ textDecoration: "none", transition: "0.3s" }}><Signup /></h6>
 
-                        
+
                     </div>
-                        }
-
-                    {currentUser && 
-                    <div className='loginHide'>
-
-                        
-
-                           <div className='d-flex align-items-center bg-danger py-1 px-2 rounded'><FontAwesomeIcon icon={faUser} className='bg-danger p-2 rounded' />
-                           <button className='btn btn-danger' onClick={clearName}> SignOut</button>
-                           </div>
-                        
-                        
-                    </div>
-                        }
-
-
-
                 </div>
                 <br />
                 <motion.div initial={{ opacity: 0, scale: 0.5 }}
@@ -104,7 +86,9 @@ const Home = () => {
                         delay: 0.9,
                         ease: [0, 0.71, 0.2, 1.01]
                     }} className='d-flex justify-content-center align-items-center'>
-                    <input type="text" className='search form-control my-4' style={{ maxWidth: "500px" }} placeholder='Search your location or Blood group' />
+                    <input type="text" className='search form-control my-4' style={{ maxWidth: "500px" }} placeholder='Search your location or Blood group' value={searchTerm}
+                    onChange={handleSearch}
+                    />
                 </motion.div>
                 <motion.div initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -116,8 +100,7 @@ const Home = () => {
                     <Row xs={1} md={3}>
 
                         {
-                            card?.length > 0 ?
-                                card?.map((item) => (
+                                filteredCards?.map((item) => (
                                     <Col className='mb-3'>
                                         <Card style={{ width: '100%', background: "white" }} className='mb-2'>
                                             <Card.Body className='p-4 rounded-3' style={{ background: "white" }}>
@@ -139,13 +122,12 @@ const Home = () => {
                                             </Card.Body>
                                         </Card>
                                     </Col>
-                                ))
-                                :
-                                <></>
-                        }
+                                ))}
                     </Row>
                 </motion.div>
             </motion.div>
+                    <Hero/>
+                    <Footer/>
 
         </>
     )
