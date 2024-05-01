@@ -9,10 +9,16 @@ import Signup from '../components/Signup';
 import { getAllUserApi } from '../services/allAPI';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
     // store card to show details 
     const [card, setCard] = useState([])
+
+    const currentUser = localStorage.getItem('user')
+
+    console.log(currentUser);
 
     const [searchTerm,setSearchTerm] = useState('');
     
@@ -38,6 +44,12 @@ const Home = () => {
         getDetails()
     }, [])
 
+    const clearName = () => {
+        localStorage.removeItem('user')
+        getDetails()
+    }
+
+
     return (
         <>
             <motion.div className='p-5' initial={{ opacity: 0, scale: 0.5 }}
@@ -54,13 +66,29 @@ const Home = () => {
                             <h5 className='mt-3'>BloodLink.in</h5>
                         </div>
                     </a>
+                    {currentUser== null && 
                     <div className='loginHide'>
+
                         <h6 className='hospital px-3 py-1' style={{ textDecoration: "none", transition: "0.3s" }}><Signin /></h6>
 
                         <h6 className='signup px-3 py-1 ms-2' style={{ textDecoration: "none", transition: "0.3s" }}><Signup /></h6>
 
 
                     </div>
+                    }
+
+                    {currentUser && 
+                    <div className='loginHide'>
+
+
+
+                           <div className='d-flex align-items-center bg-danger py-1 px-2 rounded'><FontAwesomeIcon icon={faUser} className='bg-danger p-2 rounded' />
+                           <button className='btn btn-danger' onClick={clearName}> SignOut</button>
+                           </div>
+
+
+                    </div>
+                    }
                 </div>
                 <br />
                 <motion.div initial={{ opacity: 0, scale: 0.5 }}
