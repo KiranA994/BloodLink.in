@@ -23,5 +23,5 @@ export const getUserApi = async () => {
 // api to get all data
 
 export const getAllUserApi = async() => {
-    return await commonAPI('GET', `${serverUrl}/bloodData`,'')
+    return await commonAPI('GET',`${serverUrl}/bloodData`,'')
 }

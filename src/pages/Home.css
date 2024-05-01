@@ -26,6 +26,9 @@
 .underLogin{
     display: none;
 }
+.request{
+    display: none;
+}
 @media only screen and (max-width: 600px){
     
     .logo{
@@ -37,5 +40,13 @@
     .underLogin{
         display: flex;
         margin-top: 10px;
+    }
+    .request{
+        display: flex;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+    .reqBtn{
+        display: none;
     }
 }
