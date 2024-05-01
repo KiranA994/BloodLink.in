@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { motion } from "framer-motion";
 import Logo from '../assets/BloodLink-Logo.svg'
 import User from '../assets/user-icon.svg'
-import { Card, Col, Container, Navbar, Row } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
 import './Home.css'
 import Signin from '../components/Signin';
 import Signup from '../components/Signup';
@@ -26,224 +26,94 @@ const Home = () => {
 
     return (
         <>
-            <Navbar className="bg-transparent ">
-                <Container>
-
-                    <Navbar.Brand >
-                        <img src={Bloodlogo} alt="" width={'40px'} />
-                        <span className='fs-5 ms-3' style={{ color: "white" }}>BloodLink.In</span>
-                    </Navbar.Brand>
-
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ms-auto">
-                            <Nav.Link >
-                                {/* <button varient='danger' className='btn  border rounded p-2'>Sign In</button>{' '} */}
-                                <Button variant="danger">Sign In</Button>{' '}
-                            </Nav.Link>
-
-
-                        </Nav>
-                    </Navbar.Collapse>
-          
-        </Container>
-      </Navbar>
-            <div className='row ms-5 me-5 '>
-                <div className='text-center mt-5'>
-                    <h5> Welcome to <span className='text-danger'>BloodLink.In</span></h5><h5>your go-to platform for</h5><h5> instant blood donation connections</h5>
-                    <div className='w-50 my-5 m-auto'><input type="text" placeholder='search your blood group,Location,.....'  className='form-control'/></div>
-                </div>
-                <div className='col-lg-3 col-md-6 mt-5'>
-                    <Card style={{ width: '20rem' }}>
-                        <Card.Body className='rounded' style={{ backgroundColor: '#FFFFFF' }}  >
-                            <Card.Title >
-                                <div className='d-flex justify-content-between ' style={{ backgroundColor: "white" }}>
-                                    <h3 style={{ color: 'black', background: "white",fontWeight:"700" }}>Rangan</h3>
-                                    <img src={User} alt="" style={{ backgroundColor: "white" }} />
-                                </div>
-                            </Card.Title>
-                            {/* <Card.Subtitle className="mb-2 fs-5">Blood Group : o+</Card.Subtitle> */}
-                            <Card.Text>
-                                <h6 style={{ color: 'black' }}><b>Blood Group : o+</b></h6>
-
-                                <h6 style={{ color: 'black' }}><b>Location : </b></h6>
-                                <h6 style={{ color: 'black' }}><b>Contact :+ 123 456 789</b></h6>
-                            </Card.Text>
-
-                            <div className='ms-auto d-flex justify-content-between' style={{backgroundColor:"white"}}>
-                                <Card.Link href="#"></Card.Link>
-                                <h6 className='text-danger'style={{backgroundColor:"white"}}>#o+ #city #state</h6></div>
-                        </Card.Body>
-                    </Card>
-
-                </div>
-                <div className='col-lg-3 col-md-6 mt-5'>
-                <Card style={{ width: '20rem' }}>
-                        <Card.Body className='rounded' style={{backgroundColor:'#FFFFFF'}}  >
-                            <Card.Title>
-                            <div className='d-flex justify-content-between'>
-                                    <h5 style={{color:'black'}}>Rangan</h5>
-                                    <img src={User} alt="" />
-                                </div>
-                            </Card.Title>
-                            {/* <Card.Subtitle className="mb-2 fs-5">Blood Group : o+</Card.Subtitle> */}
-                            <Card.Text>
-                                <h6 style={{color:'black'}}><b>Blood Group : o+</b></h6>
-                                
-                                <h6 style={{color:'black'}}><b>Location : </b></h6>
-                                <h6 style={{color:'black'}}><b>Contact :+ 123 456 789</b></h6>
-                            </Card.Text>
-                            
-                           <div className='ms-auto d-flex justify-content-between'>
-                             <Card.Link href="#"></Card.Link>
-                           <h6 className='text-danger'>#o+ #city #state</h6></div>
-                        </Card.Body>
-                    </Card>
-
-                </div>
-             
-                <div className='col-lg-3 col-md-6 mt-5'>
-                <Card style={{ width: '20rem' }}>
-                        <Card.Body className='rounded' style={{backgroundColor:'#FFFFFF'}}  >
-                            <Card.Title>
-                            <div className='d-flex justify-content-between'>
-                                    <h5 style={{color:'black'}}>Rangan</h5>
-                                    <img src={User} alt="" />
-                                </div>
-                            </Card.Title>
-                            {/* <Card.Subtitle className="mb-2 fs-5">Blood Group : o+</Card.Subtitle> */}
-                            <Card.Text>
-                                <h6 style={{color:'black'}}><b>Blood Group : o+</b></h6>
-                                
-                                <h6 style={{color:'black'}}><b>Location : </b></h6>
-                                <h6 style={{color:'black'}}><b>Contact :+ 123 456 789</b></h6>
-                            </Card.Text>
-
-                            <div className='ms-auto d-flex justify-content-between'>
-                                <Card.Link href="#"></Card.Link>
-                                <h6 className='text-danger'>#o+ #city #state</h6></div>
-                        </Card.Body>
-                    </Card>
-
-                </div>
-                <div className='col-lg-3 col-md-6 mt-5'>
-                <Card style={{ width: '20rem' }}>
-                        <Card.Body className='rounded' style={{backgroundColor:'#FFFFFF'}}  >
-                            <Card.Title>
-                            <div className='d-flex justify-content-between'>
-                                    <h5 style={{color:'black'}}>Rangan</h5>
-                                    <img src={User} alt="" />
-                                </div>
-                            </Card.Title>
-                            {/* <Card.Subtitle className="mb-2 fs-5">Blood Group : o+</Card.Subtitle> */}
-                            <Card.Text>
-                                <h6 style={{color:'black'}}><b>Blood Group : o+</b></h6>
-                                
-                                <h6 style={{color:'black'}}><b>Location : </b></h6>
-                                <h6 style={{color:'black'}}><b>Contact :+ 123 456 789</b></h6>
-                            </Card.Text>
-
-                            <div className='ms-auto d-flex justify-content-between'>
-                                <Card.Link href="#"></Card.Link>
-                                <h6 className='text-danger'>#o+ #city #state</h6></div>
-                        </Card.Body>
-                    </Card>
-
-                </div>
-                <div className='col-lg-3 col-md-6 mt-5'>
-                <Card style={{ width: '20rem' }}>
-                        <Card.Body className='rounded' style={{backgroundColor:'#FFFFFF'}}  >
-                            <Card.Title>
-                            <div className='d-flex justify-content-between'>
-                                    <h5 style={{color:'black'}}>Rangan</h5>
-                                    <img src={User} alt="" />
-                                </div>
-                            </Card.Title>
-                            {/* <Card.Subtitle className="mb-2 fs-5">Blood Group : o+</Card.Subtitle> */}
-                            <Card.Text>
-                                <h6 style={{color:'black'}}><b>Blood Group : o+</b></h6>
-                                
-                                <h6 style={{color:'black'}}><b>Location : </b></h6>
-                                <h6 style={{color:'black'}}><b>Contact :+ 123 456 789</b></h6>
-                            </Card.Text>
-
-                            <div className='ms-auto d-flex justify-content-between'>
-                                <Card.Link href="#"></Card.Link>
-                                <h6 className='text-danger'>#o+ #city #state</h6></div>
-                        </Card.Body>
-                    </Card>
-
-                </div>
-                <div className='col-lg-3 col-md-6 mt-5'>
-                <Card style={{ width: '20rem' }}>
-                        <Card.Body className='rounded' style={{backgroundColor:'#FFFFFF'}}  >
-                            <Card.Title>
-                            <div className='d-flex justify-content-between'>
-                                    <h5 style={{color:'black'}}>Rangan</h5>
-                                    <img src={User} alt="" />
-                                </div>
-                            </Card.Title>
-                            {/* <Card.Subtitle className="mb-2 fs-5">Blood Group : o+</Card.Subtitle> */}
-                            <Card.Text>
-                                <h6 style={{color:'black'}}><b>Blood Group : o+</b></h6>
-                                
-                                <h6 style={{color:'black'}}><b>Location : </b></h6>
-                                <h6 style={{color:'black'}}><b>Contact :+ 123 456 789</b></h6>
-                            </Card.Text>
-
-                            <div className='ms-auto d-flex justify-content-between'>
-                                <Card.Link href="#"></Card.Link>
-                                <h6 className='text-danger'>#o+ #city #state</h6></div>
-                        </Card.Body>
-                    </Card>
-
-                </div>
-
-
-
-
-
-
-            </div>
-            <hr />
-
-            <div className='row mt-5 p-5' style={{backgroundColor:'grey'}}> 
-            <div className='col-md-2'></div>
-            <div className=' col-md-8'>
-                <div className='text-center m-5 w-75 m-auto'>
-                   <p style={{color:'black'}}> <b>BloodLink is designed to facilitatedirect information between blood donors and recipients,ensuring swift and effecient access to life-saving blood donations.When you create a post on BloodLink, simply specify your bllod group and the urgency of your need .Other users can then browse the post and contact you directly if they are a match and able to donate. Rhis direct communication stramlines the process ,allowing donors and recipeints to connect quickly and cordinate donations with ease.</b></p>
-                </div>
-
-                <div className='d-flex align-items-center justify-content-center mb-5  w-100' style={{overflowX:'auto' ,scrollbarWidth:'none',height:'170px'}}>
-                    <div className='mx-4' style={{width:'80px' ,height:'80px', borderRadius:'70px',backgroundColor:"black"}}>
-                        <img src={connect} alt="" style={{width:'70px' ,height:'70px'}}className='p-1 m-auto'/>
-                        <p className='text-center mt-2' style={{color:'black'}}> Instant Connects</p>
-
-                    </div>
-                    <div className='mx-4' style={{width:'80px' ,height:'80px', borderRadius:'70px',backgroundColor:"black"}}>
-                        <img src={connect} alt="" style={{width:'70px' ,height:'70px'}}className='p-1 m-auto'/>
-                        <p className='text-center mt-2' style={{color:'black'}}> Instant Connects</p>
-
-                    </div>
-                    <div className='mx-4' style={{width:'80px' ,height:'80px', borderRadius:'70px',backgroundColor:"black"}}>
-                        <img src={connect} alt="" style={{width:'70px' ,height:'70px'}}className='p-1 m-auto'/>
-                        <p className='text-center mt-2' style={{color:'black'}}> Instant Connects</p>
-
-                    </div>
-                    <div className='mx-4' style={{width:'80px' ,height:'80px', borderRadius:'70px',backgroundColor:"black"}}>
-                        <img src={connect} alt="" style={{width:'70px' ,height:'70px'}}className='p-1 m-auto'/>
-                        <p className='text-center mt-2' style={{color:'black'}}> Instant Connects</p>
-
-                    </div>
-                    <div className='mx-4' style={{width:'80px' ,height:'80px', borderRadius:'70px',backgroundColor:"black"}}>
-                        <img src={connect} alt="" style={{width:'70px' ,height:'70px'}}className='p-1 m-auto'/>
-                        <p className='text-center mt-2' style={{color:'black'}}> Instant Connects</p>
-
+            <motion.div className='p-5' initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 0.8,
+                    delay: 0.5,
+                    ease: [0, 0.71, 0.2, 1.01]
+                }}>
+                <div className='d-flex justify-content-between align-items-center'>
+                    <a href="/" className='text-decoration-none'>
+                        <div className='d-flex'>
+                            <img src={Logo} alt="BloodLink_Logo" className='me-2' width={40} />
+                            <h5 className='mt-3'>BloodLink.in</h5>
                         </div>
+                    </a>
+                    <div className='loginHide'>
+                        <h6 className='hospital px-3 py-1' style={{ textDecoration: "none", transition: "0.3s" }}><Signin /></h6>
+
+                        <h6 className='signup px-3 py-1 ms-2' style={{ textDecoration: "none", transition: "0.3s" }}><Signup /></h6>
+
 
                     </div>
                 </div>
-                <div className='col-md-2'></div>
-            </div>
+                <br />
+                <motion.div initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                        duration: 1.2,
+                        delay: 0.7,
+                        ease: [0, 0.71, 0.2, 1.01]
+                    }} className='justify-content-center align-items-center text-center' style={{ display: "flex", flexDirection: "column" }}>
+                    <h2>Welcome to <span className='text-danger' style={{ fontWeight: "700" }}>BloodLink.in</span></h2>
+                    <h4>your go-to platform for</h4>
+                    <h3>instant blood donation connections.</h3>
+                    <div className='underLogin'>
+                        <h6 className='hospital px-3 py-1' style={{ textDecoration: "none", transition: "0.3s" }}><Signin /></h6>
+
+                        <h6 className='signup px-3 py-1 ms-2' style={{ textDecoration: "none", transition: "0.3s" }}><Signup /></h6>
+                    </div>
+                </motion.div>
+                <motion.div initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                        duration: 1.2,
+                        delay: 0.9,
+                        ease: [0, 0.71, 0.2, 1.01]
+                    }} className='d-flex justify-content-center align-items-center'>
+                    <input type="text" className='search form-control my-4' style={{ maxWidth: "500px" }} placeholder='Search your location or Blood group' />
+                </motion.div>
+                <motion.div initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                        duration: 1.2,
+                        delay: 1,
+                        ease: [0, 0.71, 0.2, 1.01]
+                    }}>
+                    <Row xs={1} md={3}>
+
+                        {
+                            card?.length > 0 ?
+                                card?.map((item) => (
+                                    <Col className='mb-3'>
+                                        <Card style={{ width: '100%', background: "white" }} className='mb-2'>
+                                            <Card.Body className='p-4 rounded-3' style={{ background: "white" }}>
+                                                <Card.Title>
+                                                    <div className='d-flex justify-content-between' style={{ background: "white" }}>
+                                                        <h2 style={{ background: "white", color: "black" }} >{item.name}</h2>
+                                                        <img src={User} alt="" style={{ background: "white" }} />
+                                                    </div></Card.Title>
+                                                <Card.Subtitle className="mb-2 fs-5 text-danger" style={{ background: "white" }}>Blood Group : {item.bloodGroup}</Card.Subtitle>
+                                                <Card.Text style={{ background: "white" }}>
+                                                    <p style={{ background: "white", color: 'black' }}>Age : {item.age}</p>
+                                                    <p style={{ background: "white", color: "black" }}>Location : {item.location}</p>
+                                                    <p style={{ background: "white", color: 'black' }}>Ph Num : {item.num}</p>
+                                                </Card.Text>
+                                                <div className='d-flex justify-content-evenly' style={{ background: "white" }}>
+                                                    <Card.Link href="#" style={{ background: "white" }}><i class="fa-solid fa-circle-check fs-5" style={{ background: "white", color: "black" }}></i></Card.Link>
+                                                    <Card.Link href={`https://wa.me/${item.num}`} style={{ background: "white" }}><i class="fa-brands fa-whatsapp fs-5" style={{ background: "white", color: "black" }}></i></Card.Link>
+                                                </div>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                ))
+                                :
+                                <></>
+                        }
+                    </Row>
+                </motion.div>
+            </motion.div>
 
         </>
     )
