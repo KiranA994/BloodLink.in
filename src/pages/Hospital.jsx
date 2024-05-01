@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Enquire from '../components/Enquire';
 import './Home.css'
 import { getAllUserApi } from '../services/allAPI';
+import { Link } from 'react-router-dom';
 
 const Hospital = () => {
     // to store details from backend 
@@ -38,9 +39,10 @@ const Hospital = () => {
                     </a>
                 </div>
                 <div className='reqBtn'>
-                    <a href="/form">
-                        <Enquire />
-                    </a>
+                    <Link to={'/form'}>
+                    <Enquire />
+                    </Link>
+                   
                 </div>
                 <a href="/form" className='request'><i class="fa-solid fa-rectangle-list text-danger mt-2"></i></a>
             </div>
