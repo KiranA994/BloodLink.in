@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Enquire = () => {
 
@@ -15,7 +15,7 @@ const Enquire = () => {
   return (
     <>
     <Link to={'/form'}>
-    <button style={{ border: "none", backgroundColor: "red", color: "white"  }} onClick={navigateToForm} className='p-2 border border-2 rounded'>Connect to Blood Bank</button>
+    <button style={{ border: "none", backgroundColor: "red", color: "white"  }}  className='p-2 border border-2 rounded'>Connect to Blood Bank</button>
     </Link>
     </>
   )
