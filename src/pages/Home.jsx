@@ -18,7 +18,7 @@ const Home = () => {
 
     const currentUser = localStorage.getItem('user')
 
-    console.log(currentUser);
+    const registeredPerson = localStorage.getItem('registeredUser')
 
     const [searchTerm,setSearchTerm] = useState('');
     
@@ -45,7 +45,13 @@ const Home = () => {
     }, [])
 
     const clearName = () => {
-        localStorage.removeItem('user')
+
+        if(currentUser){
+            localStorage.removeItem('user')
+        }
+        else{
+            localStorage.removeItem('registeredUser')
+        }
         getDetails()
     }
 
@@ -66,18 +72,8 @@ const Home = () => {
                             <h5 className='mt-3'>BloodLink.in</h5>
                         </div>
                     </a>
-                    {currentUser== null && 
-                    <div className='loginHide'>
 
-                        <h6 className='hospital px-3 py-1' style={{ textDecoration: "none", transition: "0.3s" }}><Signin /></h6>
-
-                        <h6 className='signup px-3 py-1 ms-2' style={{ textDecoration: "none", transition: "0.3s" }}><Signup /></h6>
-
-
-                    </div>
-                    }
-
-                    {currentUser && 
+                    {currentUser || registeredPerson ?
                     <div className='loginHide'>
 
 
@@ -88,7 +84,17 @@ const Home = () => {
 
 
                     </div>
+                    :
+                    <div className='loginHide'>
+
+                        <h6 className='hospital px-3 py-1' style={{ textDecoration: "none", transition: "0.3s" }}><Signin /></h6>
+
+                        <h6 className='signup px-3 py-1 ms-2' style={{ textDecoration: "none", transition: "0.3s" }}><Signup /></h6>
+
+
+                    </div>
                     }
+                    
                 </div>
                 <br />
                 <motion.div initial={{ opacity: 0, scale: 0.5 }}

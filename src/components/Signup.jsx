@@ -37,7 +37,7 @@ const Signup = () => {
       if (response.status >= 200 && response.status < 300) {
         toast.success('Account created Successfully')
         handleClose()
-
+        localStorage.setItem('registeredUser', response.data.username)
         setTimeout(() => {
           navigate('/hospital')
         }, 3000)
