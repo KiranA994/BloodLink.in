@@ -44,7 +44,7 @@ const Hospital = () => {
                     </Link>
                    
                 </div>
-                <Link to={'/form}><a href="/form" className='request'><i class="fa-solid fa-rectangle-list text-danger mt-2"></i></a></Link>
+                <Link to={'/form}><p className='request'><i class="fa-solid fa-rectangle-list text-danger mt-2"></i></p></Link>
             </div>
             <br />
             <p className='ms-5 mb-4'> BloodLink enables immediate connections between blood donors and recipients. With just a few clicks, those in need can find donors who match their blood type and location, facilitating quick and efficient blood donations.</p>
