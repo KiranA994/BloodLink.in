@@ -30,8 +30,8 @@ const Footer = () => {
         <Col>
         <h6 className='text-center mt-4'>Abhinav Bavos</h6>
         <div className='d-flex justify-content-evenly'>
-            <a href=""><i class="fa-brands fa-github text-white"></i></a>
-            <a href=""><i class="fa-brands fa-linkedin text-white"></i></a>
+            <a href="https://github.com/abhinavbavos"><i class="fa-brands fa-github text-white"></i></a>
+            <a href="https://www.linkedin.com/in/abhinav-bavos-727b97278/"><i class="fa-brands fa-linkedin text-white"></i></a>
         </div>
         </Col>
     </Row>
