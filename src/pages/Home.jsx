@@ -151,7 +151,7 @@ const Home = () => {
                                                 </Card.Text>
                                                 <div className='d-flex justify-content-evenly' style={{ background: "white" }}>
                                                     <Card.Link href="#" style={{ background: "white" }}><i class="fa-solid fa-circle-check fs-5" style={{ background: "white", color: "black" }}></i></Card.Link>
-                                                    <Card.Link href={`https://wa.me/${item.num}`} style={{ background: "white" }}><i class="fa-brands fa-whatsapp fs-5" style={{ background: "white", color: "black" }}></i></Card.Link>
+                                                    <Card.Link href={`https://wa.me/+91${item.num}`} style={{ background: "white" }}><i class="fa-brands fa-whatsapp fs-5" style={{ background: "white", color: "black" }}></i></Card.Link>
                                                 </div>
                                             </Card.Body>
                                         </Card>
