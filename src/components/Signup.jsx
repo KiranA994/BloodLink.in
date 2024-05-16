@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import '../pages/Home.css'
-import { createUserApi } from '../services/allAPI';
+import { createUserApi, getUserApi } from '../services/allAPI';
 import { Toaster, toast } from 'sonner';
 import { useNavigate } from 'react-router-dom';
 
@@ -33,7 +33,13 @@ const Signup = () => {
       toast.error('Please fill the details')
     }
     else {
-      const response = await createUserApi(signUp)
+      const response = await getUserApi();
+      const existingEmail = response.data.find(item => item.email === signUp.email);
+      if(existingEmail){
+        toast.error('Email Already Exists!')
+      }
+      else{
+        const response = await createUserApi(signUp)
       if (response.status >= 200 && response.status < 300) {
         toast.success('Account created Successfully')
         handleClose()
@@ -41,6 +47,8 @@ const Signup = () => {
         setTimeout(() => {
           navigate('/hospital')
         }, 3000)
+      }
+      
       }
       
     }

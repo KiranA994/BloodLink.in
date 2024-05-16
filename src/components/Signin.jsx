@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import '../pages/Home.css'
-import { getUserApi } from '../services/allAPI';
+import { getAdminUserApi, getUserApi } from '../services/allAPI';
 import { useNavigate } from 'react-router-dom';
 import { Toaster, toast } from 'sonner';
 
@@ -32,11 +32,18 @@ const Signin = () => {
         const response = await getUserApi();
         console.log("Fetched User Data:", response.data);
         setUserData(response.data);
+
+        const adminResponse = await getAdminUserApi();
+        console.log("Fetched Admin Data:", adminResponse.data);
+        setUserData(adminResponse.data);
     
         const existingUser = response.data.find(item => item.username === signIn.username);
-    
-        if (existingUser) {
-          const existingPswd = existingUser.password;
+        const existingAdmin = adminResponse.data.find(item => item.username === signIn.username);
+
+        
+        if (existingUser || existingAdmin) {
+          const existingPswd = existingUser?.password;
+          const existingAdminPswd = existingAdmin?.password;
     
           if (existingPswd === signIn.password) {
             toast.success('User Logged In successfully');
@@ -46,7 +53,17 @@ const Signin = () => {
               localStorage.setItem('user', existingUser.username);
               navigate('/hospital');
             }, 3000);
-          } else {
+          }
+          else if(existingAdminPswd === signIn.password){
+            toast.success('Admin Logged In successfully');
+            handleClose();
+    
+            setTimeout(() => {
+              localStorage.setItem('admin', existingAdmin.username);
+              navigate('/admin/userDetails');
+            }, 3000);
+          }
+          else {
             toast.error('Invalid password');
           }
         } else {

@@ -5,6 +5,8 @@ import Form from './pages/Form'
 import Home from './pages/Home'
 import { Route, Routes } from 'react-router-dom'
 import Signup from './components/Signup'
+import Admin from './pages/Admin'
+import AdminUserDetails from './pages/AdminUserDetails'
 
 
 
@@ -23,7 +25,8 @@ function App() {
         <Route path='/hospital' element={<Hospital/>} />
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/form' element={<Form/>} />
-
+        <Route path='/admin' element={<Admin/>} />
+        <Route path='/admin/userDetails' element={<AdminUserDetails/> } />
       </Routes>
 
 

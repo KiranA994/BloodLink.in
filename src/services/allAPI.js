@@ -25,3 +25,15 @@ export const getUserApi = async () => {
 export const getAllUserApi = async() => {
     return await commonAPI('GET',`${serverUrl}/bloodData`,'')
 }
+
+// api to get admin user details
+
+export const getAdminUserApi = async() => {
+    return await commonAPI('GET',`${serverUrl}/admin`,'')
+}
+
+// api to delete current blood data
+
+export const deleteCurrentBloodDataApi = async(id) => {
+    return await commonAPI('DELETE', `${serverUrl}/bloodData/${id}`,{})
+}
