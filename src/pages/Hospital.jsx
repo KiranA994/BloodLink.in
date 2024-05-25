@@ -73,7 +73,7 @@ const Hospital = () => {
                                                 <Card.Text>
                                                     <p>Age: {item.age}</p>
                                                     <p>Location: {item.location}</p>
-                                                    <p>Ph Num: {item.phoneNumber}</p>
+                                                    <p>Ph Num: {item.num}</p>
                                                 </Card.Text>
                                                 <div className='d-flex justify-content-evenly'>
                                                     <Card.Link href="#"><i className="fa-solid fa-circle-check fs-5"></i></Card.Link>
@@ -108,7 +108,7 @@ const Hospital = () => {
                                                 <Card.Text>
                                                     <p>Age: {item.age}</p>
                                                     <p>Location: {item.location}</p>
-                                                    <p>Ph Num: {item.phoneNumber}</p>
+                                                    <p>Ph Num: {item.num}</p>
                                                 </Card.Text>
                                                 <div className='d-flex justify-content-evenly'>
                                                     <Card.Link href="#"><i className="fa-solid fa-circle-check fs-5"></i></Card.Link>
@@ -142,7 +142,7 @@ const Hospital = () => {
                                                 <Card.Text>
                                                     <p>Age: {item.age}</p>
                                                     <p>Location: {item.location}</p>
-                                                    <p>Ph Num: {item.phoneNumber}</p>
+                                                    <p>Ph Num: {item.num}</p>
                                                 </Card.Text>
                                                 <div className='d-flex justify-content-evenly'>
                                                     <Card.Link href="#"><i className="fa-solid fa-circle-check fs-5"></i></Card.Link>
@@ -176,7 +176,7 @@ const Hospital = () => {
                                                 <Card.Text>
                                                     <p>Age: {item.age}</p>
                                                     <p>Location: {item.location}</p>
-                                                    <p>Ph Num: {item.phoneNumber}</p>
+                                                    <p>Ph Num: {item.num}</p>
                                                 </Card.Text>
                                                 <div className='d-flex justify-content-evenly'>
                                                     <Card.Link href="#"><i className="fa-solid fa-circle-check fs-5"></i></Card.Link>
